@@ -37,14 +37,7 @@
             "error"
         ],
         "react/react-in-jsx-scope": "off",
-        "import/extensions": [
-        "error",
-        "ignorePackages",
-        {
-        "ts": "never",
-        "tsx": "never"
-        }
-    ]
+        "import/extensions": "off"
     },
     "settings": {
         "import/resolver": {

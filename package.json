@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -45,6 +45,7 @@
     "@typescript-eslint/parser": "^4.15.0",
     "eslint": "^7.20.0",
     "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-react": "^7.22.0",
     "git-commit-msg-linter": "^3.0.0",
     "husky": "^5.0.9",
