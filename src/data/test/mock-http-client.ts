@@ -5,7 +5,7 @@ export class HttpPostClientSpy implements HttpPostClient {
   // eslint-disable-next-line @typescript-eslint/ban-types
   body?: object
   response: HttpResponse = {
-    statusCode: HttpStatusCode.noContent
+    statusCode: HttpStatusCode.ok
   }
 
   async post (params: HttpPostParams): Promise<HttpResponse> {
