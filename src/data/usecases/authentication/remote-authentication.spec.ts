@@ -41,7 +41,7 @@ describe('RemoteAuthentcation', () => {
   test('Should throw InvalidCredentialsError if HttpsPostClient returns 401', async () => {
     const { sut, httpPostClientSpy } = makeSut()
     httpPostClientSpy.response = {
-      statusCode: HttpStatusCode.unauthorized
+      statusCode: HttpStatusCode.unauthorized,
     }
     const promise = sut.auth(mockAuthentication())
     await expect(promise).rejects.toThrow(new InvalidCredentialsError())
@@ -50,7 +50,7 @@ describe('RemoteAuthentcation', () => {
   test('Should throw UnexpectedError if HttpPostClient return 400', async () => {
     const { sut, httpPostClientSpy } = makeSut()
     httpPostClientSpy.response = {
-      statusCode: HttpStatusCode.badRequest
+      statusCode: HttpStatusCode.badRequest,
     }
     const promise = sut.auth(mockAuthentication())
     await expect(promise).rejects.toThrow(new UnexpectedError())
@@ -59,7 +59,7 @@ describe('RemoteAuthentcation', () => {
   test('Should throw UnexpectedError if hpptPostClient return 500', async () => {
     const { sut, httpPostClientSpy } = makeSut()
     httpPostClientSpy.response = {
-      statusCode: HttpStatusCode.serverError
+      statusCode: HttpStatusCode.serverError,
     }
     const promise = sut.auth(mockAuthentication())
     await expect(promise).rejects.toThrow(new UnexpectedError())
@@ -68,7 +68,7 @@ describe('RemoteAuthentcation', () => {
   test('Should throw UnexpectedError if HttpsPostClient return 404', async () => {
     const { sut, httpPostClientSpy } = makeSut()
     httpPostClientSpy.response = {
-      statusCode: HttpStatusCode.notFound
+      statusCode: HttpStatusCode.notFound,
     }
     const promise = sut.auth(mockAuthentication())
     await expect(promise).rejects.toThrow(new UnexpectedError())
@@ -79,7 +79,7 @@ describe('RemoteAuthentcation', () => {
     const httpResult = mockAccountModel()
     httpPostClientSpy.response = {
       statusCode: HttpStatusCode.ok,
-      body: httpResult
+      body: httpResult,
     }
     const account = await sut.auth(mockAuthentication())
     expect(account).toEqual(httpResult)
